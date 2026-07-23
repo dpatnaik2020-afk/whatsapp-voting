@@ -91,7 +91,6 @@ else:
                     " has been recorded."
                 )
                 st.rerun()
-
     st.markdown("---")
     st.write(f"👥 **Total votes cast so far:** {len(st.session_state.votes)}")
     if not st.session_state.votes.empty:
