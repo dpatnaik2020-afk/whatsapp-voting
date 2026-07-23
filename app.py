@@ -24,7 +24,7 @@ if "votes" not in st.session_state:
       columns=["Voter Name", "Candidate", "Timestamp"]
   )
 
-now = datetime.datetime.now()
+now = datetime.datetime.now(ZoneInfo("Asia/Kolkata"))
 
 st.info(f"⏳ **Deadline:** {DEADLINE.strftime('%B %d, %Y - %I:%M %p')}")
 
