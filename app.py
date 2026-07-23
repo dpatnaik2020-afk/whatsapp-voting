@@ -82,7 +82,7 @@ else:
                 )
                 
                 # Update Google Sheet
-                conn.create(worksheet="Sheet1", data=updated_votes, clear=True)
+                conn.update(worksheet="Sheet1", data=updated_votes)
                 st.session_state.votes = updated_votes
                 
                 st.success(
