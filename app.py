@@ -76,13 +76,16 @@ else:
                     }]
                 )
                 
-                # Append to current session state dataframe
+               # Append to current session state dataframe
                 updated_votes = pd.concat(
                     [st.session_state.votes, new_vote], ignore_index=True
                 )
                 
-                # Update Google Sheet
-                conn.update(worksheet="Sheet1", data=updated_votes)
+                # Update Google Sheet safely using underlying gspread client
+                sheet = conn.client.open_by_url(st.secrets["connections.gsheets"]["spreadsheet"]).worksheet("Sheet1")
+                sheet.clear()
+                sheet.update([updated_votes.columns.values.tolist()] + updated_votes.values.tolist())
+                
                 st.session_state.votes = updated_votes
                 
                 st.success(
