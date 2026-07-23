@@ -81,10 +81,8 @@ else:
                     [st.session_state.votes, new_vote], ignore_index=True
                 )
                 
-                # Update Google Sheet safely using underlying gspread client
-                sheet = conn.client.open_by_url(st.secrets["connections.gsheets"]["spreadsheet"]).worksheet("Sheet1")
-                sheet.clear()
-                sheet.update([updated_votes.columns.values.tolist()] + updated_votes.values.tolist())
+                # Update Google Sheet using the native connection update method
+                conn.update(worksheet="Sheet1", data=updated_votes)
                 
                 st.session_state.votes = updated_votes
                 
