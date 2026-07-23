@@ -9,7 +9,7 @@ ELECTION_TITLE = "Class / Group Voting System"
 CANDIDATES = ["ANEESH SAHU", "DARSHIL PATNAIK", "DIPAK KUMAR PRADHAN","SAHIL SAMBHAV SWAIN"]
 
 # Set your deadline year, month, day, hour, minute
-DEADLINE = datetime.datetime(2026, 7, 30, 19, 25, 7, tzinfo=ZoneInfo("Asia/Kolkata"))
+DEADLINE = datetime.datetime(2026, 7, 30, 19,59, 7, tzinfo=ZoneInfo("Asia/Kolkata"))
 
 # =======================================================
 
