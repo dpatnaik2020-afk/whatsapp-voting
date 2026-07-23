@@ -1,13 +1,14 @@
 import datetime
 import pandas as pd
 import streamlit as st
+from zoneinfo import ZoneInfo
 
 # ==================== CONFIGURATION ====================
 ELECTION_TITLE = "Class / Group Voting System"
-CANDIDATES = ["Candidate A", "Candidate B", "Candidate C"]
+CANDIDATES = ["ANEESH SAHU", "DARSHIL PATNAIK", "DIPAK KUMAR PRADHAN","SAHIL SAMBHAV SWAIN"]
 
 # Set your deadline year, month, day, hour, minute
-DEADLINE = datetime.datetime(2026, 7, 30, 23, 59, 0)
+DEADLINE = datetime.datetime(2026, 7, 30, 18, 53, 7, tzinfo=ZoneInfo("Asia/Kolkata"))
 # =======================================================
 
 st.set_page_config(page_title=ELECTION_TITLE, page_icon="🗳️", layout="centered")
